@@ -15,11 +15,11 @@
 	import ContainerPage from '$lib/components/atoms/ContainerPage.svelte';
 	export let path: string;
 	beforeUpdate(() => {
-		if ($auth.isSignedIn && path === '/login') {
+		if (!$auth.pending && $auth.isSignedIn && path === '/login') {
 			goto('/settings');
-		} else if (!$auth.isSignedIn && path === '/settings') {
+		} else if (!$auth.pending && !$auth.isSignedIn && path === '/settings') {
 			goto('/login');
-		} else if (!$auth.isSignedIn && path === '/new') {
+		} else if (!$auth.pending && !$auth.isSignedIn && path === '/new') {
 			goto('/login');
 		}
 	});

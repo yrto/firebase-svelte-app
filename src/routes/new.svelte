@@ -36,10 +36,11 @@
 </script>
 
 <form name="new product form" on:submit|preventDefault={handleSubmit}>
-	<label for="new product form">New product:</label>
-	<input type="text" placeholder="Name" bind:value={product.name} />
-	<input type="number" placeholder="Price" bind:value={product.price} />
-	<button style="primary">Cadastrar</button>
+	<label for="name">Product name:</label>
+	<input name="name" type="text" placeholder="Name" bind:value={product.name} />
+	<label for="price">Product price:</label>
+	<input name="price" type="number" placeholder="Price" bind:value={product.price} />
+	<button style="primary">Save</button>
 </form>
 
 <h2>Products:</h2>
