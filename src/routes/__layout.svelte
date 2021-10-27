@@ -19,6 +19,8 @@
 			goto('/settings');
 		} else if (!$auth.isSignedIn && path === '/settings') {
 			goto('/login');
+		} else if (!$auth.isSignedIn && path === '/new') {
+			goto('/login');
 		}
 	});
 </script>
@@ -26,6 +28,8 @@
 <Header />
 <ContainerApp>
 	<ContainerPage>
-		<slot />
+		{#if !$auth.pending}
+			<slot />
+		{/if}
 	</ContainerPage>
 </ContainerApp>

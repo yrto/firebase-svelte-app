@@ -19,9 +19,9 @@
 		<input type="password" bind:value={credentials.password} placeholder="password" />
 		<button type="submit">Submit</button>
 	</form>
-	<div class="providers">
+	<!-- <div class="providers">
 		<button on:click={() => {}}>Sign In with Google</button>
-	</div>
+	</div> -->
 </div>
 
 <style lang="postcss">
